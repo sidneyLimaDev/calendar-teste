@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useContext, useState, useEffect } from "react"
-import GlobalContext from "../../context/GlobalContext"
+import GlobalContext from "../../../context/GlobalContext"
 import dayjs from "dayjs"
 
 

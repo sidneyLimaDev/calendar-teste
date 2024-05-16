@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
-import { getQuartoHourBlocks, getWeekDays, getWeekHours } from '../../util'
+import { getQuartoHourBlocks, getWeekDays, getWeekHours } from '../../../util'
 import { useContext } from 'react'
-import GlobalContext from '../../context/GlobalContext'
+import GlobalContext from '../../../context/GlobalContext'
 import { useEffect } from 'react'
 import Hour from './Hour'
 import dayjs from 'dayjs'

@@ -5,7 +5,7 @@ Day component withing our Month Calender
 import dayjs from 'dayjs';
 import PropTypes from 'prop-types';
 import { useContext, useState, useEffect } from 'react';
-import GlobalContext from '../../context/GlobalContext';
+import GlobalContext from '../../../context/GlobalContext';
 
 
 

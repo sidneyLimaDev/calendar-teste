@@ -4,7 +4,7 @@ Appointments page
 
 import { List, Typography } from "antd";
 import { useContext } from "react";
-import GlobalContext from "../../context/GlobalContext";
+import GlobalContext from "../../../context/GlobalContext";
 import dayjs from "dayjs";
 
 const Appointments = () => {
