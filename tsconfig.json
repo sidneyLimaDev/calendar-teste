@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["svg"]
   },
   "include": ["src","src/components", "src/custom.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
