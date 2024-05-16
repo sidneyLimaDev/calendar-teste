@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, Drawer } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useContext } from 'react';
-import GlobalContext from '../../context/GlobalContext';
+import GlobalContext from '../../../context/GlobalContext';
 
 
 const MobileMenu = () => {

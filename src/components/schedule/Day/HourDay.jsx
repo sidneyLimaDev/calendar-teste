@@ -6,7 +6,7 @@
 // Imports
 import dayjs from "dayjs";
 import { useContext, useState, useEffect } from "react"
-import GlobalContext from "../../context/GlobalContext";
+import GlobalContext from "../../../context/GlobalContext";
 
 const HourDay = ({ hour }) => {
     const { setDaySelected, setSelectedEvent, savedEvents, setShowEventModal } = useContext(GlobalContext)

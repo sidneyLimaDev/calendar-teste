@@ -6,7 +6,7 @@ TimePicker - https://ant.design/components/time-picker
 
 import { useContext } from 'react'
 import { AiOutlineAlignLeft, AiOutlineBook, AiOutlineCheck, AiOutlineClockCircle, AiOutlineClose, AiOutlineDelete, AiOutlineMenu } from 'react-icons/ai'
-import GlobalContext from '../context/GlobalContext'
+import GlobalContext from '../../context/GlobalContext'
 import { useState } from 'react'
 import { TimePicker } from 'antd'
 import dayjs from 'dayjs'

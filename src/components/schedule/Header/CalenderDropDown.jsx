@@ -3,7 +3,7 @@ Dropdown component for calender Header with the ability to switch the display mo
 */
 
 import { useContext } from "react";
-import GlobalContext from "../../context/GlobalContext";
+import GlobalContext from "../../../context/GlobalContext";
 import { DownOutlined } from '@ant-design/icons'
 import { Dropdown, Space, Typography } from 'antd'
 

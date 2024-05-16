@@ -4,10 +4,10 @@ Main entry file that bundles up all components and is called as on single compon
 
 // Imports
 import React, { lazy, useState, useEffect, Suspense } from 'react'
-import { getMonth } from '../util'
+import { getMonth } from '../../util'
 import EventModal from './EventModal'
 import { useContext } from 'react'
-import GlobalContext from '../context/GlobalContext'
+import GlobalContext from '../../context/GlobalContext'
 import CalenderHeader from './Header/CalenderHeader'
 import Sidebar from './Sidebar/Sidebar'
 import Loading from './Loading'

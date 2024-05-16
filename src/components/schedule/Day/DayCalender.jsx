@@ -2,9 +2,9 @@
 Day Calender View Component
 */
 import { useState, useContext, useEffect } from "react"
-import { getHourBlocks, getQuartoHourBlocks } from "../../util"
+import { getHourBlocks, getQuartoHourBlocks } from "../../../util"
 import HourDay from "./HourDay"
-import GlobalContext from "../../context/GlobalContext"
+import GlobalContext from "../../../context/GlobalContext"
 
 
 const DayCalender = () => {

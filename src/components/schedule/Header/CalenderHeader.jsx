@@ -5,14 +5,14 @@
 
 // Imports
 import { useContext, useEffect } from 'react'
-import GlobalContext from '../../context/GlobalContext'
+import GlobalContext from '../../../context/GlobalContext'
 import dayjs from 'dayjs'
 import { AiOutlineBell, AiOutlineLeft, AiOutlineMenuFold, AiOutlineMenuUnfold, AiOutlineRight, AiOutlineSearch } from "react-icons/ai";
 import {SettingOutlined } from '@ant-design/icons'
 import { useState } from 'react';
 import CalenderDropDown from './CalenderDropDown';
 import { Button } from 'antd'
-import { getFirstAndLastDay } from '../../util';
+import { getFirstAndLastDay } from '../../../util';
 
 const CalenderHeader = () => {
     const { monthIndex, setMonthIndex, setDaySelected, showSideCalender, setShowSideCalender, viewCalender, daySelected } = useContext(GlobalContext)
