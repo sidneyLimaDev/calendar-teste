@@ -1,71 +1,56 @@
-/*
-Dropdown component for calender Header with the ability to switch the display mode.
-*/
-
 import { useContext } from "react";
 import GlobalContext from "../../../context/GlobalContext";
-import { DownOutlined } from '@ant-design/icons'
-import { Dropdown, Space, Typography } from 'antd'
+import { Button } from 'antd';
 
+const CalenderButtons = () => {
+    const { viewCalender, setViewCalender } = useContext(GlobalContext);
 
-const CalenderDropDown = () => {
-    const { viewCalender, setViewCalender } = useContext(GlobalContext)
-
-    // Dropdown Items
+    // Button Items
     const items = [
         {
             key: 'Day',
-            label: 'Day',
+            label: 'Dia',
             onClick: () => {
                 setViewCalender('Day'); // Update global context
             }
         },
         {
             key: 'Week',
-            label: 'Week',
+            label: 'Semana',
             onClick: () => {
                 setViewCalender('Week'); // Update global context
             }
         },
         {
             key: 'Month',
-            label: 'Month',
+            label: 'Mês',
             onClick: () => {
                 setViewCalender('Month'); // Update global context
             }
-        },
+        }/* ,
         {
             key: 'Appointments',
             label: 'Appointments',
             onClick: () => {
                 setViewCalender('Appointments'); // Update global context
             }
-        }
+        } */
     ];
 
     return (
-        /*
-        AntD Dropdown that takes in array of objects
-        https://ant.design/components/dropdown
-        https://ant.design/components/typography
-        */
-        <Dropdown
-            menu={{
-                items,
-                selectable: true,
-                defaultSelectedKeys: [ viewCalender ]
-            }}
-            className="mr-5 border px-4 py-2 w-36 hiddenItemsSmallScreen"
-        >
-            <Typography>
-                <Space className="flex items-center justify-between">
-                    {viewCalender}
-                    <DownOutlined />
-                </Space>
-            </Typography>
-        </Dropdown>
-
+        <div className="button-group">
+            {items.map(item => (
+                <Button
+                    key={item.key}
+                    type={viewCalender === item.key ? 'primary' : 'default'}
+                    onClick={item.onClick}
+                    style={{ marginRight: '8px', backgroundColor: viewCalender === item.key ? 'blue' : undefined, color: viewCalender === item.key ? 'white' : undefined }}
+                >
+                    {item.label}
+                </Button>
+            ))}
+        </div>
     );
 }
 
-export default CalenderDropDown
+export default CalenderButtons;

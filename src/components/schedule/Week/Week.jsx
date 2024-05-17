@@ -7,6 +7,8 @@ import { useEffect } from 'react'
 import Hour from './Hour'
 import dayjs from 'dayjs'
 
+import CalenderHeader from '../Header/CalenderHeader'
+
 const Week = () => {
   const { daySelected } = useContext(GlobalContext)
   const [currentMonth, setCurrentMonth] = useState(getWeekDays())
@@ -30,7 +32,10 @@ const Week = () => {
 
 
   return (
-    <div className='flex flex-1 animate__backOutLeft animate__delay-2s animate__backInRight'>
+    <div className='w-full'>
+       <div><CalenderHeader /></div>
+       <div className='flex flex-1 animate__backOutLeft animate__delay-2s animate__backInRight'>
+     
       <div className='flex flex-col flex-1'>
         <div>
           {/* Header with Weekdays */}
@@ -76,6 +81,8 @@ const Week = () => {
         </div>
       </div>
     </div>
+    </div>
+    
   )
 }
 

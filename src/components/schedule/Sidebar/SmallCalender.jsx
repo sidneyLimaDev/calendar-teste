@@ -30,7 +30,7 @@ const SmallCalender = () => {
         const nowDay = dayjs().format(format)
         const currDay = day.format(format)
         const slcDay = daySelected && daySelected.format(format)
-        return nowDay === currDay ? 'bg-red-500 text-white p-1 rounded-full ' : (currDay == slcDay ? "bg-blue-100 rounded-full text-blue-600 font-bold" : "")
+        return nowDay === currDay ? 'bg-blue-500 text-white rounded-full ' : (currDay == slcDay ? "bg-blue-100 rounded-full text-blue-600 font-bold" : "")
     }
 
     // Checks current Months and Days, Returns Gray if the days and months have passed add Black if Current Or Yet to pass

@@ -7,12 +7,14 @@ import PropTypes from 'prop-types';
 import Day from "./Day"
 import React from 'react';
 
+import CalenderHeader from '../Header/CalenderHeader';
 
 const Month = ({ month }) => {
     return (
         // Month Component Main Entry
         <div className='flex flex-col flex-1 animate__backOutLeft animate__backInRight animate__delay-2s'>
             {/* Month Calender Header with Dates */}
+            <CalenderHeader />
             <div className="grid grid-cols-7 grid-rows-1 py-4 border border-b-0 shadow-md">
                 {month[0].map((day, i) => (
                     <span key={i} className='text-sm text-center flex items-center justify-center h-4'>

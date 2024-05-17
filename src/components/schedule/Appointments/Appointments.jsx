@@ -14,7 +14,7 @@ const Appointments = () => {
         // If there are no Events Saved return No appointments
         <div className="animate__backOutLeft animate__backInRight animate__delay-2s flex flex-col w-full">
             {!savedEvents?.length && (
-                <Typography.Text className="flex justify-center items-center h-screen text-gray-600 text-bold">
+                <Typography.Text className="flex justify-center  h-screen text-gray-600 ">
                     Sorry, there are no appointments.
                 </Typography.Text>
             )}

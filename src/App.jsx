@@ -1,7 +1,6 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
 import Patients from './pages/Patients'; // Importe a página Patients aqui
 import RegisterProfessional from './pages/RegisterProfessional';
 import RegisterPatient from './pages/RegisterPatient';
@@ -35,14 +34,8 @@ const App = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
         <Route exact path="/pacientes">
           <Patients />
-        </Route>
-        <Route exact path="/agendamentos">
-          <MainEntry />
         </Route>
         <Route exact path="/cadastro-profissional">
           <RegisterProfessional />
@@ -51,7 +44,7 @@ const App = () => (
           <RegisterPatient />
         </Route>
         <Route exact path="/">
-          <Redirect to="/home" />
+        <MainEntry />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

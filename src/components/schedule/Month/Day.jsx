@@ -23,16 +23,12 @@ const Day = ({ day }) => {
         return day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ? ' text-red-500' : ' '
     }
 
-    const getOffDay = () => {
-        return day.format('ddd') === ("Sun") | day.format('ddd') === ("Sat")
-    }
-
     const getTheSelectedDay = () => {
         return day.format('D') === daySelected.format('D')
     }
 
     const cssstyle = {
-        background: `${getOffDay() ? '#F4F4F4' : "#EBEBEB1A"}`,
+
         color: `${getTheSelectedDay() ? 'blue': ""}`
     }
 
@@ -40,16 +36,13 @@ const Day = ({ day }) => {
         <div className=' day border border-gray-200 flex flex-col h-36 DayBox' style={cssstyle}>
             <header className='flex flex-col '>
                 {day.format('DD-MM-YY') === dayjs().format('DD-MM-YY') ?
-                    <p className='text-left p-2 pb-0 text-base font-medium text-red-600'>Today</p>
+                    <p className='text-left p-2 pb-0 text-base font-medium text-color-blue1'>Hoje</p>
                     :
                     <>
                         <p className={`text-base p-2 pb-0 text-left font-semibold ${getCurrentDayClass()}`}>
                             {day.format('D')}
                         </p>
-                        <div>
-                            {getOffDay() ?
-                                <p className='text-xs text-gray-400 text-left'>Day Off</p> : " "
-                            }
+                        <div>   
                         </div>
 
                     </>

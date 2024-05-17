@@ -8,11 +8,12 @@ import { getMonth } from '../../util'
 import EventModal from './EventModal'
 import { useContext } from 'react'
 import GlobalContext from '../../context/GlobalContext'
-import CalenderHeader from './Header/CalenderHeader'
 import Sidebar from './Sidebar/Sidebar'
 import Loading from './Loading'
 import AddButton from './AddButton'
 import MobileMenu from './Header/MobileMenu'
+
+import Menu from '../Menu'
 
 // Lazy Loaded Components
 const Appointments = lazy(() => import('./Appointments/Appointments'))
@@ -40,6 +41,7 @@ const MainEntry = () => {
 
     return (
         <React.Fragment>
+            <Menu/>
             {/* Event Modal For handling our appointments  */}
             {showEventModal && <EventModal />}
             {/* Calender Headers */}
@@ -47,11 +49,11 @@ const MainEntry = () => {
                 <div className="mobileScreenView ">
                 <MobileMenu />
                 </div>
-                <CalenderHeader />
                 <div className="flex flex-1 monthCalender">
                     <div className="hiddenItemsSmallScreen flex">
                         {showSideCalender &&
                             <Sidebar />
+                            
                         }
                     </div>
                     {/* Calender + Appointment components loads when calender mode is met */}

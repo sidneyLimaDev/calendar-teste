@@ -6,6 +6,7 @@ import { getHourBlocks, getQuartoHourBlocks } from "../../../util"
 import HourDay from "./HourDay"
 import GlobalContext from "../../../context/GlobalContext"
 
+import CalenderHeader from "../Header/CalenderHeader"
 
 const DayCalender = () => {
     const {daySelected } = useContext(GlobalContext)
@@ -19,12 +20,15 @@ const DayCalender = () => {
     }, [daySelected])
 
     return (
+        <div className="w-full">
+            <div><CalenderHeader /></div>
         <div className="animate__delay-2s animate__backOutLeft animate__backInRight flex flex-1 overflow-y-scroll mt-0.5">
             {/* left */}
             <div className="">
                 {/*Side Bar With hours  */}
                 <div className='flex flex-col'>
                     <div className='grid grid-cols-1 grid-rows-96 '>
+                    
                         {currentHours.map((item, kee) => (
                             <div className="grid grid-cols-1 grid-rows-4 h-24 " key={kee}>
                                 {item.map((hrs, kd) => (
@@ -47,6 +51,7 @@ const DayCalender = () => {
                     </div>
                 ))}
             </div>
+        </div>
         </div>
     )
 }

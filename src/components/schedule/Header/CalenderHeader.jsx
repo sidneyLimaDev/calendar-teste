@@ -7,16 +7,16 @@
 import { useContext, useEffect } from 'react'
 import GlobalContext from '../../../context/GlobalContext'
 import dayjs from 'dayjs'
-import { AiOutlineBell, AiOutlineLeft, AiOutlineMenuFold, AiOutlineMenuUnfold, AiOutlineRight, AiOutlineSearch } from "react-icons/ai";
-import {SettingOutlined } from '@ant-design/icons'
+import {  AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
+/* import {SettingOutlined } from '@ant-design/icons' */
 import { useState } from 'react';
 import CalenderDropDown from './CalenderDropDown';
 import { Button } from 'antd'
 import { getFirstAndLastDay } from '../../../util';
 
 const CalenderHeader = () => {
-    const { monthIndex, setMonthIndex, setDaySelected, showSideCalender, setShowSideCalender, viewCalender, daySelected } = useContext(GlobalContext)
-    const [searchValue, setSearchValue] = useState("")
+    const { monthIndex, setMonthIndex, setDaySelected, showSideCalender, viewCalender, daySelected } = useContext(GlobalContext)
+/*     const [searchValue, setSearchValue] = useState("") */
     const [currentDay, setCurrentDay] = useState(daySelected.date())
 
     // Returns amount of days in a Month given the Month Index 0-11
@@ -48,9 +48,9 @@ const CalenderHeader = () => {
     }
 
     // Toggles our Side Bar with Calender and Jump Controls
-    const handleSideCalender = () => {
+   /*  const handleSideCalender = () => {
         setShowSideCalender(!showSideCalender)
-    }
+    } */
 
     // Rerender when SiderBar Calender Mode Changes
     useEffect(() => {
@@ -78,15 +78,10 @@ const CalenderHeader = () => {
 
     return (
         <header className=" calenderHeaderMenu px-4 py-3 flex items-center justify-between border shadow-md border-b-gray-200">
-            <div className="flex  items-center justify-center">
-                <div className='hiddenItemsSmallScreen cursor-pointer rounded py-2 px-3 mr-5 text-3xl' onClick={handleSideCalender}>
-                    {showSideCalender ? <AiOutlineMenuFold /> : <AiOutlineMenuUnfold />}
-                </div>
+            <div className="flex  items-center justify-between w-full">
+                <Button className=" py-2 px-4 mr-5" size="large" onClick={handleReset}>Hoje</Button>
                 <CalenderDropDown />
-                <Button className=" py-2 px-4 mr-5" size="large" onClick={handleReset}>Today</Button>
-            </div>
-            {/* Controls */}
-            <div className=' controls flex items-centerjustify-center gap-4'>
+                <div className=' controls flex items-centerjustify-center gap-4'>
                 {/* Left Control */}
                 <Button size='large' onClick={() => handleNextPrevMonth(-1)} className='flex items-center justify-center border rounded p-3'>
                     <span className='cursor-pointer text-black '>
@@ -119,13 +114,16 @@ const CalenderHeader = () => {
                     </span>
                 </Button>
             </div>
+            </div>
+            {/* Controls */}
+            
 
                 {/*  Right Container with our Setting , Notification Icon and  Searchbox*/}
-            <div className=" hiddenItemsSmallScreen flex justify-center items-center gap-4 text-3xl">
+            {/* <div className=" hiddenItemsSmallScreen flex justify-center items-center gap-4 text-3xl">
                 <div className=""><SettingOutlined /> </div>
                 <div className=""><AiOutlineBell /></div>
                 <div name='searchBox' value={searchValue} onChange={(e) => setSearchValue(e)} type="text" className=" py-2 px-3 border rounded text-gray-400 bg-gray-200 text-lg flex items-center justify-center gap-2 cursor-pointer"> <AiOutlineSearch />  Search</div>
-            </div>
+            </div> */}
         </header>
     )
 }
